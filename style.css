@@ -1,0 +1,14 @@
+#countdown {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: centre;
+}
+
+.time-box {
+    text-align: centre;
+}
+
+.time-box span {
+    font-size: 3rem;
+    font-weight: bold;;
+}
