@@ -27,7 +27,7 @@
 .countdown-label {
     font-family: monospace;
     font-size: 25px;
-    width: 250px;
+    width: 450px;
     height: auto;
     float: left;
     transition: .5s linear;
@@ -101,20 +101,30 @@ button {
     width: 100px;
 }
 
+.value {
+    font-size: 4rem;
+    line-height: 1;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .time-box span {
     display: inline-block;
     line-height: 1;
     font-size: 4rem;
 }
 
-.time-box .colon {
+.colon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 12px;
+    width: 18px;
     font-size: 3.5rem;
     line-height: 1;
-    margin: 0 6px;
+    margin: 0 10px;
+    height: 4rem;
 }
 
 .time-box .days,
