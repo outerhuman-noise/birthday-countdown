@@ -1,14 +1,38 @@
+.page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
 #countdown {
     display: flex;
-    gap: 1.5rem;
-    justify-content: centre;
+    flex-direction: row;
+    gap: 0rem;
+    justify-content: space-between;
+    overflow: hidden;
+    width: fit-content;
+    text-align: center;
+    font-family: monospace;
+    margin: 0 auto;
 }
 
 .time-box {
     text-align: centre;
+    width: 55px;
+    height: fit-content;
 }
 
 .time-box span {
     font-size: 3rem;
-    font-weight: bold;;
+    font-weight: bold;
+}
+
+.time-box .days,
+.time-box .hours,
+.time-box .minutes,
+.time-box .seconds {
+    text-align: center;
+    width: 55px;    
+    overflow: hidden;
+    height: 40px;
 }
