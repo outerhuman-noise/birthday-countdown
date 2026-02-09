@@ -1,3 +1,14 @@
+#countdown {
+    display: flex;
+    flex-direction: row;
+    gap: 0rem;
+    justify-content: space-between;
+    overflow: hidden;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -103,19 +114,19 @@
     padding: 24px;
 }
 
-.section-body {
-    padding: 64px 0;
+.section-intro h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin: 0 0 12px;
 }
 
-#countdown {
-    display: flex;
-    flex-direction: row;
-    gap: 0rem;
-    justify-content: space-between;
-    overflow: hidden;
-    width: fit-content;
-    text-align: center;
-    margin: 0 auto;
+.section-intro p {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    line-height: 1.4;
+    margin: 12px;
+}
+
+.section-body {
+    padding: 64px 0;
 }
 
 .rsvp-btn {
