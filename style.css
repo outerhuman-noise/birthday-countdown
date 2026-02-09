@@ -13,9 +13,9 @@
 }
 
 .scroll-hint {
-    position: absolute;
+    position: fixed;
     left: 50%;
-    bottom: 80px;
+    bottom: clamp(5px, 6vh, 50px);
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
