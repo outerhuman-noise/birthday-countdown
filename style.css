@@ -18,11 +18,33 @@
     max-width: 600px;
     width: 100%;
     text-align: center;
+    margin: 0 auto;
+    padding: 24px;
+    font-family: monospace;
 }
 
 .section {
     min-height: 100vh;
     padding: 64px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-page {
+    padding: 0;
+}
+
+.section-intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.section-body {
+    padding: 64px 0;
 }
 
 #countdown {
@@ -33,12 +55,10 @@
     overflow: hidden;
     width: fit-content;
     text-align: center;
-    font-family: monospace;
     margin: 0 auto;
 }
 
 .countdown-label {
-    font-family: monospace;
     font-size: 25px;
     width: 450px;
     height: auto;
