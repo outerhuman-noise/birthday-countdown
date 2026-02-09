@@ -118,7 +118,7 @@
     margin: 0 auto;
 }
 
-.countdown-label {
+.rsvp-btn {
     font-size: 25px;
     width: 450px;
     height: auto;
@@ -134,7 +134,7 @@
     font-weight: 900;
 }
 
-.countdown-label:before {
+.rsvp-btn:before {
     position: absolute;
     content: '';
     left: 0;
@@ -147,7 +147,7 @@
     transform: translateX(100%);
 }
 
-.countdown-label:after {
+.rsvp-btn:after {
     position: absolute;
     content: '';
     top: 0;
@@ -160,18 +160,18 @@
     transform: translateX(-100%);
 }
 
-.countdown-label:hover {
+.rsvp-btn:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.countdown-label:hover:before {
+.rsvp-btn:hover:before {
   border-color: #262626;
   height: 100%;
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .3s;
 }
 
-.countdown-label:hover:after {
+.rsvp-btn:hover:after {
   border-color: #262626;
   height: 100%;
   transform: translateX(0);
