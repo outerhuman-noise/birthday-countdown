@@ -25,27 +25,28 @@
     opacity: 0.75;
     user-select: none;
     pointer-events: none;
+    font-size: clamp(12px, 1.2vw, 18px);
 }
 
 .scroll-hint__text {
-    font-size: 0.9rem;
+    font-size: 0.9em;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
 .scroll-hint__btn {
-    margin: 10px auto;
-    width: 40px;
-    height: 80px;
-    border: 3px solid rgba(122, 122, 124, 0.918);
-    border-radius: 20px;
+    margin: 0.6em auto;
+    width: 2.6em;
+    height: 5.2em;
+    border: 0.2em solid rgba(122, 122, 124, 0.918);
+    border-radius: 1.3em;
     display: flex;
 }
 
 .mouse-scroll {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 1.3em;
+    height: 1.3em;
     background: linear-gradient(170deg,rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
     border-radius: 50%;
     margin: auto;
@@ -55,12 +56,12 @@
 @keyframes scrolling13 {
     0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-1.3em);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(20px);
+        transform: translateY(1.3em);
     }
 }
 
