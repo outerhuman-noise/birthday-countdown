@@ -1,3 +1,6 @@
+// console.log("script loaded");
+// console.log("open buttons:", document.querySelectorAll(".rsvp-open").length);
+
 const daysText = document.getElementById("days");
 const hoursText = document.getElementById("hours");
 const minutesText = document.getElementById("minutes");
@@ -52,9 +55,41 @@ function updateCountdown() {
     minutesText.textContent = pad2(minutes);
     secondsText.textContent = pad2(seconds);
 
-    bdayText.textContent = target;
+    // bdayText.textContent = target;
 }
 
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+const modal = document.getElementById("rsvpModal");
+
+function openModal() {
+    if (!modal) return;
+    
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    modal.querySelector("input")?.focus();
+}
+
+function closeModal() {
+    if (!modal) return;
+
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+}
+
+const buttons = document.querySelectorAll(".rsvp-open");
+// console.log("rsvp-open buttons found:", buttons.length)
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", openModal());
+});
+
+modal?.addEventListener("click", (e) => {
+    if (e.target.matches('[data-close="true"]')) closeModal();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal?.classList.contains("is-open")) closeModal();
+});

@@ -4,13 +4,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Birthday Countdown</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
 
     <body>
         <main>
             <section class="hero">
                 <div class="page">
-                    <button>
+                    <button type="button" class="rsvp-open">
                         <span class="rsvp-btn">
                             ETHAN'S BIRTHDAY
                         </span>
@@ -43,8 +44,6 @@
                     <!-- <div id="testing">
                         <span id="bday">0</span>
                     </div> -->
-
-                    <script src="script.js" defer></script>
                 </div>
 
                 <div class="scroll-hint" aria-hidden="true">
@@ -58,9 +57,9 @@
             <section class="section scroll-page" id="more">
                 <div class="section-intro">
                     <div class="page">
-                        <h2>IMPORTANT INFORMATION</h2>
+                        <h2>WHY YOU'RE HERE</h2>
                         <p>
-                            As you doubtless already know my anniversary of parturition
+                            As you doubtless already know my anniversary of birth
                             is approaching. Since those of you who have navigated your
                             ways to this website are of course the worthiest of worthies,
                             you are formally invited to attend the celebrations.
@@ -71,7 +70,7 @@
                             either the headline UI element above or the button below.
                         </p>
                         
-                        <button>
+                        <button type="button" class="rsvp-open">
                             <span class="rsvp-btn">
                                 RSVP
                             </span>
@@ -93,5 +92,38 @@
                 </div>
             </section>
         </main>
+
+        <button type="button" class="rsvp-open">RSVP</button>
+
+        <div class="modal" id="rsvpModal" aria-hidden="true">
+            <div class="modal__overlay" data-close="true"></div>
+
+            <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+                <button class="modal__close" type="button" aria-label="CloseRSVP" data-close="true">✕</button>
+                
+                <form class="form">
+                    <p class="title">RSVP</p>
+                    <p class="message">RSVP now to secure your place.</p>
+                    <div class="flex">
+                        <label>
+                            <input class="input" type="text" placeholder="" required="">
+                            <span>First Name</span>
+                        </label>
+
+                        <label>
+                            <input class="input" type="text" placeholder="" required="">
+                            <span>Last Name</span>
+                        </label>
+                    </div>
+
+                    <label>
+                        <input class="input" type="email" placeholder="" required="">
+                        <span>Email</span>
+                    </label>
+
+                    <button class="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
