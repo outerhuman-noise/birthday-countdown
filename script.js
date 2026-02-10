@@ -64,26 +64,35 @@ setInterval(updateCountdown, 1000);
 
 const modal = document.getElementById("rsvpModal");
 
-function openModal() {
+function openModal(opener) {
     if (!modal) return;
+
+    lastOpener = opener || document.activeElement;
     
+    modal.removeAttribute("inert")
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
-    modal.querySelector("input")?.focus();
+
+    const firstInput = modal.querySelector("input, select, textarea, button");
+    if (firstInput) firstInput.focus();
 }
 
 function closeModal() {
     if (!modal) return;
 
+    if (lastOpener && typeof lastOpener.focus === "function") {
+        lastOpener.focus();
+    }
+
+    modal.setAttribute("inert", "");
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
 }
 
-const buttons = document.querySelectorAll(".rsvp-open");
-// console.log("rsvp-open buttons found:", buttons.length)
-
-buttons.forEach(btn => {
-    btn.addEventListener("click", openModal());
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".rsvp-open");
+    if (!btn) return;
+    openModal(btn);
 });
 
 modal?.addEventListener("click", (e) => {
