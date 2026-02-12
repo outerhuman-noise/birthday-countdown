@@ -250,7 +250,9 @@ button {
 }
 
 .modal.is-open {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal__overlay {
@@ -261,8 +263,8 @@ button {
 
 .modal__panel {
     position: relative;
-    width: min(560px, 92vw);
-    margin: 10vh auto 0;
+    width: fit-content;
+    margin: 0;
     border-radius: 16px;
     background: transparent;
 }
@@ -283,6 +285,8 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: min(350px, 92vw);
+    margin: 0 auto;
     max-width: 350px;
     padding: 20px;
     border-radius: 20px;
