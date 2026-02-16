@@ -1,6 +1,10 @@
 // console.log("script loaded");
 // console.log("open buttons:", document.querySelectorAll(".rsvp-open").length);
 
+emailjs.init({
+    publicKey: "eetwVE5pCI_PGWCmf"
+});
+
 const daysText = document.getElementById("days");
 const hoursText = document.getElementById("hours");
 const minutesText = document.getElementById("minutes");
@@ -102,3 +106,45 @@ modal?.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal?.classList.contains("is-open")) closeModal();
 });
+
+const form = document.getElementById("rsvpForm");
+const msg = document.getElementById("rsvpMsg");
+
+if (form) {
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        // honeypot check
+        const website = data.website;
+        if (website) return;
+
+        const templateParams = {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            plusOnes: data.plusOnes
+        }
+        console.log("RSVP data:", data);
+
+        const googleFormURL = 
+            "https://docs.google.com/forms/d/e/1FAIpQLSetxMmx9myiI-ATOyC7mm4qHU3aAGSzI-5_6nsItmKpwNdE-A/formResponse";
+        
+        const params = new URLSearchParams( {
+            "entry.1886011252": data.firstName,
+            "entry.1965333831": data.lastName,
+            "entry.972978631": data.email,
+            "entry.1603189258": data.plusOnes
+        });
+
+        fetch(googleFormURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: params
+        });
+
+        form.reset();
+        closeModal();
+    });
+}

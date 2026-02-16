@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Birthday Countdown</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="script.js" defer></script>
     </head>
 
@@ -95,36 +96,42 @@
 
         <button type="button" class="rsvp-open">RSVP</button>
 
-        <div class="modal" id="rsvpModal" aria-hidden="true" inert">
+        <div class="modal" id="rsvpModal" aria-hidden="true" inert>
             <div class="modal__overlay" data-close="true"></div>
 
             <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
                 
-                <form class="form">
+                <form class="form" id="rsvpForm">
                     <button class="modal__close" type="button" aria-label="CloseRSVP" data-close="true">✕</button>
-                    <p class="title">RSVP</p>
+                    
+                    <p class="title" id="rsvpTitle">RSVP</p>
                     <p class="message">RSVP now to secure your place.</p>
+                    
                     <div class="flex">
                         <label>
-                            <input class="input" type="text" placeholder="" required="">
+                            <input class="input" name="firstName" type="text" required>
                             <span>First Name</span>
                         </label>
 
                         <label>
-                            <input class="input" type="text" placeholder="" required="">
+                            <input class="input" name="lastName" type="text" required>
                             <span>Last Name</span>
                         </label>
                     </div>
 
                     <label>
-                        <input class="input" type="email" placeholder="" required="">
+                        <input class="input" name="email" type="email" required>
                         <span>Email</span>
                     </label>
 
                     <label>
-                        <input class="input" type="plusx" placeholder="" required="">
-                        <span>Plus Ones</span>
+                        <input class="input" name="plusOnes" type="number" min="0" max="2" value="0" required>
+                        <span>Number of Plus Ones</span>
                     </label>
+
+                    <p id="rsvpMsg" class="message" aria-live="polite"></p>
+
+                    <input type="text" name="website" style="display:none">
 
                     <button class="submit">Submit</button>
                 </form>
