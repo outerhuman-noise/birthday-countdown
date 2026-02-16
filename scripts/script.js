@@ -110,6 +110,9 @@ document.addEventListener("keydown", (e) => {
 const form = document.getElementById("rsvpForm");
 const msg = document.getElementById("rsvpMsg");
 
+const SERVICE_ID = "service_a3m6ldq";
+const TEMPLATE_ID = "template_irx58qi";
+
 if (form) {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -143,6 +146,13 @@ if (form) {
             mode: "no-cors",
             body: params
         });
+
+        try {
+            await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+        } catch (err) {
+            console.error(err);
+            if (msg) msg.textContent = "Sorry, something went wrong.";
+        }
 
         form.reset();
         closeModal();
